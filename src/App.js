@@ -6,9 +6,9 @@ import { PersistGate } from "redux-persist/integration/react";
 // import PrivateRoute from "./helpers/PrivateRoute";
 import PublicRoute from "./helpers/PublicRoute";
 
-// import LandingPage from "./pages/LandingPage/LandingPage";
-// import Login from "./pages/Auth/Login/Login";
-// import Register from "./pages/Auth/Register/Register";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import Login from "./pages/Auth/Login/Login";
+import Register from "./pages/Auth/Register/Register";
 
 function App() {
   return (
