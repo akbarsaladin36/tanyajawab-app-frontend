@@ -1,0 +1,57 @@
+.image_background {
+    background-image: url('../../assets/img/public-page-background.jpg');
+    background-size: cover;
+    height: 100%;
+}
+
+.landing_picture_1_size {
+    width: 350px;
+    height: 350px;
+    border-radius: 10%;
+}
+
+.landing_picture_2_size {
+    width: 350px;
+    height: 350px;
+    border-radius: 10%;
+}
+
+.landing_picture_3_size {
+    width: 350px;
+    height: 350px;
+    border-radius: 10%;
+}
+
+/* Responsive Page For Tablet */
+
+@media only screen and (max-width: 768px) {
+    .landing_picture_2_size {
+        margin-top: 50px;
+        width: 350px;
+        height: 350px;
+        border-radius: 10%;
+    }
+    
+    .landing_picture_3_size {
+        margin-top: 50px;
+        width: 350px;
+        height: 350px;
+        border-radius: 10%;
+    }   
+}
+
+/* Responsive Page For Handphone */
+
+@media only screen and (max-width: 425px) {
+    .landing_picture_2_size {
+        width: 350px;
+        height: 350px;
+        border-radius: 10%;
+    }
+    
+    .landing_picture_3_size {
+        width: 350px;
+        height: 350px;
+        border-radius: 10%;
+    }
+}

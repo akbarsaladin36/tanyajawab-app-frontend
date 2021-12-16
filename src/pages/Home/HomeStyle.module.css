@@ -1,0 +1,5 @@
+.image_background {
+    background-image: url('../../assets/img/public-page-background.jpg');
+    background-size: cover;
+    height: 100%;
+}

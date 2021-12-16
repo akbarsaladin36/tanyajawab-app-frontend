@@ -1,0 +1,46 @@
+.image_background {
+    background-image: url('../../../assets/img/public-page-background.jpg');
+    background-size: cover;
+    height: 100%;
+}
+
+.form_input_size {
+    width: 50% !important;
+    margin-left: 280px;
+    margin-right: 280px;
+}
+
+.alert_size {
+    width: 50% !important;
+    margin-left: 280px;
+    margin-right: 280px;
+}
+
+/* Responsive Page For Tablet */
+
+@media only screen and (max-width: 768px) {
+    .form_input_size {
+        margin-left: 180px;
+        margin-right: 180px;
+    }
+
+    .alert_size {
+        margin-left: 180px;
+        margin-right: 180px;
+    }
+}
+
+/* Responsive Page For Handphone */
+
+@media only screen and (max-width: 425px) {
+    .form_input_size {
+        width: 60% !important;
+        margin-left: 85px;
+        margin-right: 85px;
+    }
+
+    .alert_size {
+        margin-left: 85px;
+        margin-right: 85px;
+    }
+}
