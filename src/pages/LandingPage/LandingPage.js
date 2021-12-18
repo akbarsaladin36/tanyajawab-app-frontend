@@ -3,9 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import LandingPageStyle from "./LandingPageStyle.module.css";
 import Footer from "../../components/Footer/Footer";
 import Navbar1 from "../../components/Navbar/Navbar";
+
 import LandingPicture1 from "../../assets/img/edwin-andrade-raise-a-hand-question-unsplash.jpg";
 import LandingPicture2 from "../../assets/img/headway-answer-question-unsplash.jpg";
 import LandingPicture3 from "../../assets/img/priscilla-du-preez-meet-people-unsplash.jpg";
+import DiscussionPicture from "../../assets/img/sebastian-herrmann-discussion-unsplash.jpg";
 
 
 const LandingPage = () => {
@@ -31,8 +33,17 @@ const LandingPage = () => {
                           </Col>
                       </Row>
                     </div>
-                    <div className="mt-5 mx-5 text-center text-light">
-                        <h1 className="mt-5">Why we want this app ?</h1>
+                    <div className="mt-5 mx-5 text-light">
+                        <h1 className="mt-5 text-center">Why we want this app ?</h1>
+                        <Row className="mt-5">
+                          <Col>
+                            <img src={DiscussionPicture} className={LandingPageStyle.discussion_picture} alt="discussion" />
+                          </Col>
+                          <Col>
+                            <h5>Solve your problem from one discussion</h5>
+                            <p className={`${LandingPageStyle.discussion_picture_word} text-light mt-3`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet at lacus sed condimentum. Proin vitae felis dignissim, pulvinar dui id, ultricies est. Cras consectetur condimentum felis, vehicula scelerisque neque consequat in. Vivamus commodo nibh fringilla, finibus nunc sit amet, iaculis nunc. Fusce tincidunt turpis vitae efficitur viverra. Proin tristique rhoncus posuere. Nulla porta, mi id rhoncus sollicitudin, enim lacus hendrerit ante, non sodales lorem risus eu est. Proin at porta ipsum. Vivamus eget nibh aliquet, ultricies felis sit amet, euismod tellus. Sed fermentum erat et libero fringilla mollis. Maecenas sodales nec quam ornare efficitur. Nulla vel rhoncus erat. Duis sed scelerisque est. Donec ipsum elit, convallis a elementum molestie, tincidunt id augue. Suspendisse at turpis sit amet nisl venenatis rhoncus. Cras condimentum ex at ex condimentum facilisis.</p>
+                          </Col>
+                        </Row>
                     </div>
                 </Container>
             <Footer/>

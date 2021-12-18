@@ -1,6 +1,9 @@
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import { Navbar, Nav, Container, Button, NavDropdown } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { GrNotification } from "react-icons/gr";
+
+import NavbarStyle from "./NavbarStyle.module.css";
 
 const Navbar1 = () => {
 
@@ -22,7 +25,16 @@ const Navbar1 = () => {
                     <Navbar.Brand href="/home">TanyaJawab</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto text-light">
+                            <Nav.Link href="#">All Questions</Nav.Link>
+                            <Nav.Link href="#">All Answers</Nav.Link>
+                            <Nav.Link href="#">All Followers</Nav.Link>
+                            <Nav.Link href="#">Search</Nav.Link>
+                        </Nav>
                         <Nav className="ms-auto text-light">
+                            <NavDropdown title={<GrNotification />} align="end" id="basic-nav-dropdown">
+                              <NavDropdown.Item href="#action/3.4">Notification</NavDropdown.Item>
+                            </NavDropdown>
                             <Button onClick={handleLogout}>Logout</Button>
                         </Nav>
                     </Navbar.Collapse>

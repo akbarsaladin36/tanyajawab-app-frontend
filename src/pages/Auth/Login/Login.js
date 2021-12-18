@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Col, Container, Row, Button, Form } from "react-bootstrap";
+import { Col, Container, Row, Button, Form, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import Footer from "../../../components/Footer/Footer";
@@ -17,6 +17,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [isSuccess, setIsSuccess] = useState("");
     const [isError, setIsError] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     const changeEmail = (event) => {
         setEmail(event.target.value);
@@ -48,7 +49,10 @@ const Login = () => {
                 setIsError(false);
                 localStorage.setItem("token", res.action.payload.data.data.token);
                 localStorage.setItem("user_id", res.action.payload.data.data.user_id);
-                history.push('/home');
+                setIsLoading(true);
+                setTimeout(() => {
+                  history.push('/home');
+                }, 5000)
             })
             .catch((err) => {
                 console.log(err);
@@ -83,7 +87,7 @@ const Login = () => {
                             </div>
                             ) }
                             <Button variant="primary" className={`${LoginStyle.form_input_size} mt-3`} type="submit">
-                                Submit
+                                { isLoading ? (<Spinner animation="border" />) : ("Submit") }
                             </Button>
                             <p className="text-light mt-3">Are you a new member ? You can join <Link to="/register">here</Link></p>
                           </Form>
