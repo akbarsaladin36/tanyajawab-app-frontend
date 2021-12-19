@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Col, Container, Row, Button, Form } from "react-bootstrap";
+import { Col, Container, Row, Button, Form, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -22,6 +22,7 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [isSuccess, setIsSuccess] = useState("");
     const [isError, setIsError] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
     
     const changeUsername = (event) => {
         setUsername(event.target.value);
@@ -69,9 +70,10 @@ const Register = () => {
             .then((res) => {
                 setIsSuccess(res.action.payload.data.msg);
                 setIsError(false);
+                setIsLoading(true);
                 setTimeout(() => {
                     history.push('/login');
-                }, 3000)
+                }, 4500)
             })
             .catch((err) => {
                 console.log(err);
@@ -115,7 +117,7 @@ const Register = () => {
                             </div>
                             ) }
                             <Button variant="primary" className={`${RegisterStyle.form_input_size} mt-3`} type="submit">
-                                Create an Account
+                                { isLoading ? (<Spinner animation="border" />) : ("Create an Account") }
                             </Button>
                             <p className="text-light mt-3">Have you registered as member ? Please login <Link to="/login">here</Link></p>
                           </Form>

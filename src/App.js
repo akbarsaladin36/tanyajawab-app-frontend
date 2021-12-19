@@ -10,6 +10,7 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import Login from "./pages/Auth/Login/Login";
 import Register from "./pages/Auth/Register/Register";
 import Home from "./pages/Home/Home";
+import CreateQuestion from "./pages/CreateQuestion/CreateQuestion";
 
 function App() {
   return (
@@ -43,6 +44,12 @@ function App() {
               path="/home"
               exact
               component={Home}
+            />
+            <PrivateRoute
+              Route
+              path="/create-question"
+              exact
+              component={CreateQuestion}
             />
           </Switch>
         </Router>

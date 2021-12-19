@@ -35,6 +35,7 @@ const Navbar1 = () => {
                             <NavDropdown title={<GrNotification />} align="end" id="basic-nav-dropdown">
                               <NavDropdown.Item href="#action/3.4">Notification</NavDropdown.Item>
                             </NavDropdown>
+                            <Nav.Link href="#">Profile</Nav.Link>
                             <Button onClick={handleLogout}>Logout</Button>
                         </Nav>
                     </Navbar.Collapse>
