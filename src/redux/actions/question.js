@@ -7,6 +7,13 @@ export const allQuestions = (data) => {
   };
 };
 
+export const oneQuestion = (id) => {
+  return {
+    type: "GET_ONE_QUESTION",
+    payload: axiosApiIntances.get(`question/${id}`),
+  };
+}
+
 export const createQuestion = (data) => {
   return {
     type: "CREATE_QUESTION",

@@ -9,8 +9,11 @@ import PublicRoute from "./helpers/PublicRoute";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Login from "./pages/Auth/Login/Login";
 import Register from "./pages/Auth/Register/Register";
+
 import Home from "./pages/Home/Home";
 import CreateQuestion from "./pages/CreateQuestion/CreateQuestion";
+import QuestionDetail from "./pages/QuestionDetail/QuestionDetail";
+
 
 function App() {
   return (
@@ -50,6 +53,12 @@ function App() {
               path="/create-question"
               exact
               component={CreateQuestion}
+            />
+            <PrivateRoute
+              Route
+              path="/question/:id"
+              exact
+              component={QuestionDetail}
             />
           </Switch>
         </Router>

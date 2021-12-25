@@ -53,6 +53,7 @@ const Home = () => {
                                       <div className="flex-grow-1 ms-3">
                                         {item.user_username}
                                         <p className="my-3">{item.question_title}</p>
+                                        <Link to={`/question/${item.question_id}`}>{item.question_title}</Link>
                                       </div>
                                     </div>
                             )) }
