@@ -1,5 +1,6 @@
 const initialState = {
-    data: {},
+    data: [],
+    dataOneQuestion: [],
     isLogin: false,
     isLoading: false,
     isError: false,
@@ -34,6 +35,33 @@ const initialState = {
           isError: true,
           msg: action.payload.response.data.msg,
         };
+
+        case "GET_ONE_QUESTION_PENDING":
+          return {
+            ...state,
+            isLogin: false,
+            isLoading: true,
+            isError: false,
+          };
+    
+        case "GET_ONE_QUESTION_FULFILLED":
+          return {
+            ...state,
+            isLogin: true,
+            isLoading: false,
+            isError: false,
+            dataOneQuestion: action.payload.data.data[0],
+            msg: action.payload.data.msg,
+          };
+    
+        case "GET_ONE_QUESTION_REJECTED":
+          return {
+            ...state,
+            isLogin: false,
+            isLoading: false,
+            isError: true,
+            msg: action.payload.response.data.msg,
+          };
   
       case "CREATE_QUESTION_PENDING":
         return {

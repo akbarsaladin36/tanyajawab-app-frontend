@@ -46,14 +46,13 @@ const Home = () => {
                             <br />
                             <hr />
                             { questionList.map((item, index) => (
-                                    <div className="d-flex mt-3" key={index}>
+                                    <div className="d-flex mt-5" key={index}>
                                       <div className="flex-shrink-0">
                                         <img src={ProfilePicture} className={HomeStyle.profile_user_image_size} alt="profile user" />
                                       </div>
                                       <div className="flex-grow-1 ms-3">
-                                        {item.user_username}
-                                        <p className="my-3">{item.question_title}</p>
-                                        <Link to={`/question/${item.question_id}`}>{item.question_title}</Link>
+                                        <b>{item.user_username}</b>
+                                        <Link to={`/question/${item.question_id}`} className="my-3"><p className="my-3">{item.question_title}</p></Link>
                                       </div>
                                     </div>
                             )) }
