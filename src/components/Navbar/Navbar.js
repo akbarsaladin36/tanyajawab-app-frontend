@@ -26,7 +26,7 @@ const Navbar1 = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto text-light">
-                            <Nav.Link href="#">All Questions</Nav.Link>
+                            <Nav.Link href="/all-questions">All Questions</Nav.Link>
                             <Nav.Link href="#">All Answers</Nav.Link>
                             <Nav.Link href="#">All Followers</Nav.Link>
                             <Nav.Link href="#">Search</Nav.Link>

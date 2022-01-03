@@ -6,3 +6,10 @@ export const getAllAnswer = (id, data) => {
         payload: axiosApiIntances.get(`answer/question/${id}`, data),
     };
 };
+
+export const createAnswer = (data) => {
+    return {
+        type: 'CREATE_ANSWER',
+        payload: axiosApiIntances.post('answer', data),
+    };
+};

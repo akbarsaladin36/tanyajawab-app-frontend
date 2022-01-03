@@ -13,6 +13,7 @@ import Register from "./pages/Auth/Register/Register";
 import Home from "./pages/Home/Home";
 import CreateQuestion from "./pages/CreateQuestion/CreateQuestion";
 import QuestionDetail from "./pages/QuestionDetail/QuestionDetail";
+import AllQuestions from "./pages/AllQuestions/AllQuestions";
 
 
 function App() {
@@ -59,6 +60,12 @@ function App() {
               path="/question/:id"
               exact
               component={QuestionDetail}
+            />
+            <PrivateRoute
+              Route
+              path="/all-questions"
+              exact
+              component={AllQuestions}
             />
           </Switch>
         </Router>

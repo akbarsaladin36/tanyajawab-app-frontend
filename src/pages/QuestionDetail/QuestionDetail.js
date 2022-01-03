@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar1 from "../../components/Navbar/Navbar";
-import { getAllAnswer } from "../../redux/actions/answer";
+import { createAnswer, getAllAnswer } from "../../redux/actions/answer";
 import { oneQuestion } from "../../redux/actions/question";
 import ProfilePicture from "../../assets/img/user-profile-image.png";
 import QuestionDetailStyle from "./QuestionDetailStyle.module.css";
@@ -19,6 +19,7 @@ const QuestionDetail = () => {
     const history = useHistory();
 
     const [oneQuestionList, setOneQuestionList] = useState([]);
+    const [answerText, setAnswerText] = useState(""); 
     const [allAnswerForQuestion, setAllAnswerForQuestion] = useState([]);
 
     useEffect(() => {
@@ -48,6 +49,28 @@ const QuestionDetail = () => {
         })
     }
 
+    const changeAnswerText = (event) => {
+        setAnswerText(event.target.value);
+    }
+
+    const handleSubmitAnswer = () => {
+        const data = {
+            questionId: id,
+            answerBody: answerText
+        };
+        dispatch(createAnswer(data))
+        .then((res) => {
+            console.log(res);
+            setTimeout(() => {
+                history.push(`/question/${id}`);
+            }, 3000)
+            getAllAnswerByQuestionId();
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    }
+
 
     return (
         <div className={QuestionDetailStyle.image_background}>
@@ -60,7 +83,10 @@ const QuestionDetail = () => {
                     </div>
                     <div className="text-light mt-5">
                         <h2>All Answer</h2>
-                        <Link to="#" className="btn btn-primary mt-3">Answer Now!</Link>
+                        <Form>
+                            <Form.Control as="textarea" value={answerText} rows={8} placeholder="Enter a question text" onChange={(event) => changeAnswerText(event)}/>
+                            <Button className="btn btn-primary mt-3" onClick={handleSubmitAnswer}>Answer Now!</Button>
+                        </Form>
                         { allAnswerForQuestion.map((item, index) => (
                                     <div className="d-flex mt-5" key={index}>
                                       <div className="flex-shrink-0">
