@@ -3,3 +3,8 @@
     background-size: cover;
     height: 100%;
 }
+
+.profile_user_image_size {
+    width: 90px;
+    height: 90px;
+}
